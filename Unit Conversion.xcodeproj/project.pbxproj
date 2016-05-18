@@ -15,6 +15,7 @@
 		48AB24BE1CECD025002D00CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AB24BC1CECD025002D00CB /* LaunchScreen.storyboard */; };
 		48AB24C91CECD025002D00CB /* Unit_ConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AB24C81CECD025002D00CB /* Unit_ConversionTests.m */; };
 		48AB24D41CECD025002D00CB /* Unit_ConversionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AB24D31CECD025002D00CB /* Unit_ConversionUITests.m */; };
+		48AB24E31CECDB03002D00CB /* Convert.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AB24E21CECDB03002D00CB /* Convert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		48AB24CF1CECD025002D00CB /* Unit ConversionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit ConversionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AB24D31CECD025002D00CB /* Unit_ConversionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Unit_ConversionUITests.m; sourceTree = "<group>"; };
 		48AB24D51CECD025002D00CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48AB24E11CECDB03002D00CB /* Convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Convert.h; sourceTree = "<group>"; };
+		48AB24E21CECDB03002D00CB /* Convert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Convert.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				48AB24BC1CECD025002D00CB /* LaunchScreen.storyboard */,
 				48AB24BF1CECD025002D00CB /* Info.plist */,
 				48AB24AE1CECD024002D00CB /* Supporting Files */,
+				48AB24E11CECDB03002D00CB /* Convert.h */,
+				48AB24E21CECDB03002D00CB /* Convert.m */,
 			);
 			path = "Unit Conversion";
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48AB24B61CECD024002D00CB /* ViewController.m in Sources */,
+				48AB24E31CECDB03002D00CB /* Convert.m in Sources */,
 				48AB24B31CECD024002D00CB /* AppDelegate.m in Sources */,
 				48AB24B01CECD024002D00CB /* main.m in Sources */,
 			);

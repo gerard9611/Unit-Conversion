@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+{
+    
+}
+@property (weak, nonatomic) IBOutlet UITextField *txtNumber;
+@property (weak, nonatomic) IBOutlet UILabel *lblResult;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerUnits;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentType;
+@property (nonatomic) NSMutableArray *areaUnits;
+@property (nonatomic) NSMutableArray *lenUnits;
+@property (nonatomic) NSMutableArray *tempUnits;
+- (IBAction)btnTypes:(id)sender;
 
 @end
 
