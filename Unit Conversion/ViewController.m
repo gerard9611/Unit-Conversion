@@ -100,10 +100,14 @@
 {
     //textField.text = [dataArray objectAtIndex:row];
     Convert *aCon = [[Convert alloc] init];
-    int type = (int)[_segmentType selectedSegmentIndex];
-    int form = (int)[_pickerUnits selectedRowInComponent:0];
-    int to = (int)[_pickerUnits selectedRowInComponent:1];
-    double res = [aCon convertUnit:[_txtNumber.text doubleValue] from:form to:to type:type];
+   
+    double res = 0;
+    if([_segmentType selectedSegmentIndex] == 0)
+        res = [aCon convertArea:(int)[_pickerUnits selectedRowInComponent:0] to: (int)[_pickerUnits selectedRowInComponent:1] val: [_txtNumber.text floatValue]];
+    if([_segmentType selectedSegmentIndex] == 1)
+        res = [aCon convertLength:(int)[_pickerUnits selectedRowInComponent:0] to: (int)[_pickerUnits selectedRowInComponent:1] val: [_txtNumber.text floatValue]];
+    if([_segmentType selectedSegmentIndex] == 2)
+        res = [aCon convertTemperature:(int)[_pickerUnits selectedRowInComponent:0] to: (int)[_pickerUnits selectedRowInComponent:1] val: [_txtNumber.text floatValue]];
     
     _lblResult.text = [NSString stringWithFormat:@"%f", res];
 }

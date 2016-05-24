@@ -12,6 +12,10 @@
 
 
 
--(double)convertUnit: (double) number from:(int)formUnit to:(int)toUnit type:(int)typeUnit;
+-(float) convertArea:(int)fromIndex to:(int) toIndex val:(float) value;
+
+-(float) convertTemperature:(int)fromIndex to:(int) toIndex val:(float) value;
+
+-(float) convertLength:(int)fromIndex to:(int) toIndex val:(float) value;
 
 @end

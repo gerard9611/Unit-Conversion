@@ -11,62 +11,99 @@
 @implementation Convert
 
 
--(double)convertUnit: (double) number from:(int)formUnit to:(int)toUnit type:(int)typeUnit
-{
-    if(typeUnit == 0)//Area
-    {
-        //0 KM - 1 Meter - 2 Foot
-        if((formUnit == 0 && toUnit == 0) || (formUnit == 1 && toUnit == 1) || (formUnit == 2 && toUnit == 2))
-            return number;
-        else if(formUnit == 0 && toUnit == 1)
-            return number*1000;
-        else if(formUnit == 0 && toUnit == 2)
-            return number*3280.8;
-        else if(formUnit == 1 && toUnit == 0)
-            return number/1000;
-        else if(formUnit == 1 && toUnit == 2)
-            return (number/1000)*3280.8;
-        else if(formUnit == 2 && toUnit == 0)
-            return number/3280.8;
-        else //if(formUnit == 2 && toUnit == 1)
-            return (number/3280.8)/1000;
+-(float)convertArea:(int)fromIndex to:(int)toIndex val:(float)value {
+    switch (fromIndex) {
+        case 0://km
+            if(toIndex == 1) {//meter
+                value/=1000;
+            } else if (toIndex == 2) {//foot
+                value*=0.0328;
+            }
+            break;
+        case 1://m
+            if(toIndex == 0) {
+                value*=1000;
+            } else if (toIndex == 2) {
+                value*=3.28;
+            }
+            break;
+        case 2://foot
+            if(toIndex == 0) {
+                value*=0.0003048;
+            } else if (toIndex == 1) {
+                value/=3.28;
+            }
+            break;
     }
-    else if(typeUnit == 1)//Length
-    {
-        //0 Meter - 1 KM - 2 Mile - 3 Foot
-        if((formUnit == 0 && toUnit == 0) || (formUnit == 1 && toUnit == 1) || (formUnit == 2 && toUnit == 2) || (formUnit == 3 && toUnit == 3))
-            return number;
-        else if(formUnit == 0 && toUnit == 1)
-            return number/1000;
-        else if(formUnit == 0 && toUnit == 2)
-            return number*0.00062137;
-        else if(formUnit == 0 && toUnit == 3)
-            return number/1000*3280.8;
-        else if(formUnit == 1 && toUnit == 0)
-            return number*1000;
-        else if(formUnit == 1 && toUnit == 2)
-            return number*1000*0.00062137;
-        else if(formUnit == 1 && toUnit == 3)
-            return number*3280.8;
-        else if(formUnit == 2 && toUnit == 0)
-            return number/0.00062137;
-        else if(formUnit == 2 && toUnit == 1)
-            return (number/0.00062137)/0.00062137;
-        else if(formUnit == 2 && toUnit == 3)
-            return ((number/0.00062137)/1000)*3280.8;
-//        else if(formUnit == 3 && toUnit == 0)
-//            return number/
-        
-        else
-            return 0;
+    return value;
+}
+
+-(float)convertTemperature:(int)fromIndex to:(int)toIndex val:(float)value {
+    switch (fromIndex) {
+        case 0://
+            if(toIndex == 1) {//Fahrenheit
+                value=	value * 1.8 + 32;
+            } else if (toIndex == 2) {//Kelvin
+                value= value + 273;
+            }
+            break;
+        case 1://Fahrenheit
+            if(toIndex == 0) {//Celsius
+                value= (value - 32)/1.8;
+            } else if (toIndex == 2) { // Kelvin
+                value= (value + 469.68 ) * (5/9)  ;
+            }
+            break;
+        case 2://Kelvin
+            if(toIndex == 0) { // Celsius
+                value= value - 273;
+            } else if (toIndex == 1) { // Fahrenheit
+                value= value* (9/5) - 459.67;
+            }
+            break;
     }
-    else//Temperature
-    {
-        if((formUnit == 0 && toUnit == 0) || (formUnit == 1 && toUnit == 1) || (formUnit == 2 && toUnit == 2))
-            return number;
-        else
-            return 0;
+    return value;
+}
+
+-(float)convertLength:(int)fromIndex to:(int)toIndex val:(float)value {
+    switch (fromIndex) {
+        case 0://km
+            if(toIndex == 1) {//meter
+                value/=1000;
+            } else if (toIndex == 2) {//foot
+                value*=0.0328;
+            } else if (toIndex == 3) {//foot
+                value*=0.6214;
+            }
+            break;
+        case 1://m
+            if(toIndex == 0) {
+                value*=1000;
+            } else if (toIndex == 2) {
+                value*=3.28;
+            } else if (toIndex == 3) {//foot
+                value*=0.00062;
+            }
+            break;
+        case 2://foot
+            if(toIndex == 0) {
+                value*=0.0003048;
+            } else if (toIndex == 1) {
+                value*=0.3048;
+            } else if (toIndex == 3) {//foot
+                value*=0.00019;
+            }
+            break;
+        case 3://miles
+            if(toIndex == 0) {
+                value*=1.61;
+            } else if (toIndex == 1) {
+                value*=0.00161;
+            } else if (toIndex == 2) {//foot
+                value*=5280;
+            }
+            break;
     }
-    //return 0;
+    return value;
 }
 @end
