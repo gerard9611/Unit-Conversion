@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		486953E81CF7BB5200671266 /* bg.gif in Resources */ = {isa = PBXBuildFile; fileRef = 486953E71CF7BB5200671266 /* bg.gif */; };
 		48AB24B01CECD024002D00CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AB24AF1CECD024002D00CB /* main.m */; };
 		48AB24B31CECD024002D00CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AB24B21CECD024002D00CB /* AppDelegate.m */; };
 		48AB24B61CECD024002D00CB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AB24B51CECD024002D00CB /* ViewController.m */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		486953E71CF7BB5200671266 /* bg.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = bg.gif; path = Images/bg.gif; sourceTree = "<group>"; };
 		48AB24AB1CECD024002D00CB /* Unit Conversion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unit Conversion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AB24AF1CECD024002D00CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48AB24B11CECD024002D00CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		486953E61CF7BB4500671266 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				486953E71CF7BB5200671266 /* bg.gif */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		48AB24A21CECD024002D00CB = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		48AB24AD1CECD024002D00CB /* Unit Conversion */ = {
 			isa = PBXGroup;
 			children = (
+				486953E61CF7BB4500671266 /* Resources */,
 				48AB24B11CECD024002D00CB /* AppDelegate.h */,
 				48AB24B21CECD024002D00CB /* AppDelegate.m */,
 				48AB24B41CECD024002D00CB /* ViewController.h */,
@@ -251,6 +262,7 @@
 				48AB24BE1CECD025002D00CB /* LaunchScreen.storyboard in Resources */,
 				48AB24BB1CECD025002D00CB /* Assets.xcassets in Resources */,
 				48AB24B91CECD024002D00CB /* Main.storyboard in Resources */,
+				486953E81CF7BB5200671266 /* bg.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +514,7 @@
 				48AB24DA1CECD025002D00CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48AB24DB1CECD025002D00CB /* Build configuration list for PBXNativeTarget "Unit ConversionTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +523,7 @@
 				48AB24DD1CECD025002D00CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48AB24DE1CECD025002D00CB /* Build configuration list for PBXNativeTarget "Unit ConversionUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +532,7 @@
 				48AB24E01CECD025002D00CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

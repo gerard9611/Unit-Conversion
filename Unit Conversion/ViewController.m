@@ -74,26 +74,59 @@
     }
     return 0;
 }
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
+/*
+ This Function is not used and replaced bu the viewForRow for view customization
+ */
+//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+//{
+//    if(component == 0)
+//    {
+//        if([_segmentType selectedSegmentIndex] == 0)
+//            return [_areaUnits objectAtIndex:row];
+//        else if([_segmentType selectedSegmentIndex] == 1)
+//            return [_lenUnits objectAtIndex:row];
+//        else
+//            return [_tempUnits objectAtIndex:row];
+//    }
+//    else
+//    {
+//        if([_segmentType selectedSegmentIndex] == 0)
+//            return [_areaUnits objectAtIndex:row];
+//        else if([_segmentType selectedSegmentIndex] == 1)
+//            return [_lenUnits objectAtIndex:row];
+//        else
+//            return [_tempUnits objectAtIndex:row];
+//    }
+//}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    UILabel* tView = (UILabel*)view;
+    if (!tView){
+        tView = [[UILabel alloc] init];
+        // Setup label properties - frame, font, colors etc
+        tView.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
+        tView.textAlignment = NSTextAlignmentCenter;
+    }
+    // Fill the label text here
     if(component == 0)
     {
         if([_segmentType selectedSegmentIndex] == 0)
-            return [_areaUnits objectAtIndex:row];
+            tView.text = [_areaUnits objectAtIndex:row];
         else if([_segmentType selectedSegmentIndex] == 1)
-            return [_lenUnits objectAtIndex:row];
+            tView.text = [_lenUnits objectAtIndex:row];
         else
-            return [_tempUnits objectAtIndex:row];
+            tView.text = [_tempUnits objectAtIndex:row];
     }
     else
     {
         if([_segmentType selectedSegmentIndex] == 0)
-            return [_areaUnits objectAtIndex:row];
+            tView.text = [_areaUnits objectAtIndex:row];
         else if([_segmentType selectedSegmentIndex] == 1)
-            return [_lenUnits objectAtIndex:row];
+            tView.text = [_lenUnits objectAtIndex:row];
         else
-            return [_tempUnits objectAtIndex:row];
+            tView.text = [_tempUnits objectAtIndex:row];
     }
+    return tView;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
