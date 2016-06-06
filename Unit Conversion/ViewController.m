@@ -142,7 +142,7 @@
     if([_segmentType selectedSegmentIndex] == 2)
         res = [aCon convertTemperature:(int)[_pickerUnits selectedRowInComponent:0] to: (int)[_pickerUnits selectedRowInComponent:1] val: [_txtNumber.text floatValue]];
     
-    _lblResult.text = [NSString stringWithFormat:@"%f", res];
+    _lblResult.text = [NSString stringWithFormat:@"%.2f", res];
 }
 
 
